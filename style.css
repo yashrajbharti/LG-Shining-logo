@@ -1,0 +1,68 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(237, 244, 246);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.image-wrapper {
+    height: 24rem;
+    width: 24rem;
+    border-radius: 6px;
+    background-color: transparent;
+
+    transform: translateY(-50px);
+    -webkit-transform: translateY(-50px);
+    -moz-transform: translateY(-50px);
+    -o-transform: translateY(-50px);
+}
+
+
+.image-wrapper svg {
+    height: auto;
+    max-width: 100%;
+}
+
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine::before {
+    background: linear-gradient(to right, rgba(237, 244, 246, 0) 0%, rgba(237, 244, 246, 0.3) 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: -75%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-25deg);
+    width: 50%;
+    z-index: 2;
+}
+
+.shine::before,
+.shine::before {
+    -webkit-animation: shine 0.85s infinite;
+    animation: shine 0.85s infinite;
+}
+
+@-webkit-keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
